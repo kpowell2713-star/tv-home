@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="clock">
+        <div id="time" class="time"></div>
+        <div id="date" class="date"></div>
+      </div>
+      <div id="mode" class="mode" hidden>Editing — Enter on a tile to move or remove it · Back when done</div>
+    </header>
+
+    <main>
+      <ul id="apps" class="apps" role="listbox" aria-label="Apps"></ul>
+    </main>
+
+    <footer class="hint">
+      <span>Hold <kbd>Enter</kbd> or press <kbd>E</kbd> to edit</span>
+    </footer>
+
+    <dialog id="add">
+      <form method="dialog" class="add-form">
+        <h2>Add app</h2>
+        <label>Name <input name="name" required /></label>
+        <label>Web address <input name="url" type="url" placeholder="https://" required /></label>
+        <label>Android TV package (optional) <input name="android" placeholder="com.example.tv" /></label>
+        <label>Tile color <input name="color" type="color" value="#3a3a3a" /></label>
+        <menu>
+          <button value="cancel" formnovalidate>Cancel</button>
+          <button value="save">Add</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <dialog id="tile">
+      <form method="dialog" class="add-form">
+        <h2></h2>
+        <menu>
+          <button value="move">Move</button>
+          <button value="remove">Remove</button>
+          <button value="cancel">Cancel</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <div id="screensaver" class="screensaver" hidden></div>
+
+    <script src="apps.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
